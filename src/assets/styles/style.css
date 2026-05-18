@@ -7,6 +7,7 @@
     --gold-light: #e8c96a;
     --serif: 'Playfair Display', serif;
     --sans: 'DM Sans', sans-serif;
+    /* --aos-distance: 30px; Standart 100px edi. O'zingizga qarab o'zgartiring */
 }
 *{
     margin: 0;

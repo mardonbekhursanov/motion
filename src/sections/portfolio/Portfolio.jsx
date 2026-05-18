@@ -80,7 +80,7 @@ function Portfolio() {
             <div className="portfolio__general parent">
                 {
                     data.map((item, index)=> {
-                        return <a key={index} href={item.link} className={`portfolio__box div${index+1}`} style={{backgroundImage: `url(${item.cover})`}}>
+                        return <a data-aos="fade-up" key={index} href={item.link} className={`portfolio__box div${index+1}`} style={{backgroundImage: `url(${item.cover})`, transitionDuration: "1.5s"}}>
                             <p className="box__number">0{index+1}</p>
                             <div className="box__row">
                                 <p className="row__text">
