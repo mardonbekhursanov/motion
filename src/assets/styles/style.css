@@ -1,0 +1,130 @@
+:root {
+    --white: #ffffff;
+    --black: #0a0a0a;
+    --gray: #f5f4f1;
+    --muted: #999;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --serif: 'Playfair Display', serif;
+    --sans: 'DM Sans', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    cursor: none !important;
+    scroll-behavior: smooth;
+}
+
+/* Ichki nuqta */
+.cursor {
+    width: 10px;
+    height: 10px;
+    background-color:cadetblue;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate3d(0, 0, 0) translate(-50%, -50%);
+    will-change: transform;
+    /* Rang o'zgarishi silliq bo'lishi uchun */
+    transition: background-color 0.3s ease; 
+}
+
+/* Tashqi border */
+.cursor-border {
+    width: 40px;
+    height: 40px;
+    border: 0.1px solid gray;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate3d(0, 0, 0) translate(-50%, -50%);
+    will-change: transform;
+    /* Rang va o'lcham silliq o'zgarishi uchun */
+    transition: background-color 0.3s ease, border-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.cursor.is-hovered {
+    width: 8px;
+    height: 8px;
+    background-color: #e8c96a;
+}
+
+
+.cursor-border.is-hovered {
+    width: 60px; 
+    height: 60px;
+    border-color: #e8c96a;
+    background-color: rgba(232, 201, 106, 0.1);
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* NAVIGATION START */
+.header__nav{
+    border-bottom: 0.1px solid rgba(0, 0, 0, 0.091);
+    padding: 25px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    backdrop-filter: blur(20px);
+    top: 0;
+}
+.nav__logo{
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 200;
+}
+.nav__bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav__list{
+    display: flex;
+    gap: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--sans);
+    text-transform: uppercase;
+}
+.nav__item a{
+    color: rgba(0, 0, 0, 0.453);
+    transition: color 0.2s;
+}
+.nav__item{
+    display: flex;
+    flex-direction: column;
+}
+.nav__item::after{
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: var(--gold);
+    transition: width 0.2s;
+}
+.nav__item:hover::after{
+    width: 100%;
+}
+.nav__item:hover a{
+    color: black;
+}
+
+/* NAVIGATION END */
+.main{
+    margin-top: 90px;
+}

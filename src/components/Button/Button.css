@@ -1,0 +1,16 @@
+.magnetic-btn:hover{
+    background-color: black;
+    color: white;
+}
+.magnetic-btn {
+    padding: 10px 30px;
+    color: black;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: var(--sans);
+    border: 1px solid black;
+    background-color: transparent;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform; 
+}
