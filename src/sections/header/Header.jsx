@@ -21,7 +21,7 @@ function Header() {
           <MagneticButton href='#'>
             Ishlarni ko'rish
           </MagneticButton>
-          <a href="#" className="header__link">
+          <a href="#contact" className="header__link">
             Loyiha boshlash 
           </a>
         </div>

@@ -47,7 +47,7 @@ function Portfolio() {
     ]
   return (
     <section className='portfolio'>
-        <marquee>
+        <marquee behavior="left">
             <ul className="portfolio__list">
             <li className="portfolio__item">
                 Social Media
@@ -74,7 +74,7 @@ function Portfolio() {
                 <h2 className="portfolio__title">
                     Tanlangan ishlar
                 </h2>
-                <a href="#" className="portfolio__link">Barchasi</a>
+                <a href="#all" className="portfolio__link">Barchasi</a>
             </div>
             <div className="portfolio__general parent">
                 {
