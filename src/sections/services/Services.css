@@ -1,0 +1,153 @@
+.services-section {
+    padding: 50px 0px;
+}
+
+/* Sarlavha qismi */
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+
+.services-title {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.services-subtitle {
+  font-size: 0.9rem;
+  color: #8c8c8c;
+  max-width: 300px;
+  font-family: var(--sans);
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* Grid chiziqlari strukturasi */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #e5e2da; 
+}
+
+/* Har bir xizmat bloki */
+.service-card {
+  padding: 40px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 1px solid #e5e2da;
+  position: relative; 
+  transition: background-color 0.3s ease; 
+}
+
+/* Markazdan chiquvchi chiziq */
+.service-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;   
+  height: 3px; 
+  background-color: #c9a84c;
+  transition: width 0.4s ease, left 0.4s ease; 
+}
+
+/* ---- HOVER HOLATLARI ---- */
+.service-card:hover {
+  background-color: #f5f4f1;
+}
+
+/* Hover bo'lganda chiziqning chiqishi */
+.service-card:hover::after {
+  width: 100%;
+  left: 0; 
+}
+
+/* ---- YANGILIK: Karta hover bo'lganda logoni kattalashtirish ---- */
+.service-card:hover .card-icon {
+  transform: scale(1.18); /* Logoni 18% ga kattalashtiradi */
+}
+
+/* O'rtadagi chiziqlarni taqsimlash */
+.service-card:not(:nth-child(3n)) {
+  border-right: 1px solid #e5e2da;
+}
+
+.card-number {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  margin-bottom: 25px;
+  font-family: var(--sans);
+}
+
+.card-icon {
+  margin-bottom: 25px;
+  color: #333;
+  display: inline-block; /* Kattalashish effekti to'g'ri ishlashi uchun kenglik bera oladigan turda bo'lishi kerak */
+  transform-origin: left center; /* Kattalashish markazi chap tomonda bo'ladi (tekis turishi uchun) */
+  
+  /* Kattalashish va kichiklashish silliq bo'lishi uchun transition */
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: var(--serif);
+  color: #111;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #7a7a7a;
+  line-height: 1.6;
+  font-family: var(--sans);
+}
+
+/* Responsive dizayn (Planshet va Mobil uchun) - TO'G'RILANGAN VARIANT */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* 3 talik grid qoidalarini butkul tozalaymiz */
+  .service-card:not(:nth-child(3n)) {
+    border-right: none;
+  }
+  
+  /* Yangi 2 talik grid uchun o'ng border qoidasi: 
+     Faqat juft (o'ng tomondagi) kartalarda border bo'lmaydi */
+  .service-card {
+    border-right: 1px solid #e5e2da;
+  }
+  .service-card:nth-child(2n) {
+    border-right: none;
+  }
+  
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .services-subtitle {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    /* Mobil ekranda barcha o'ng borderlarni o'chiramiz */
+    border-right: none !important; 
+  }
+  .services-title {
+    font-size: 30px;
+  }
+}

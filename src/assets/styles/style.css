@@ -20,7 +20,14 @@ html{
     cursor: none !important;
     scroll-behavior: smooth;
 }
-
+.page__height{
+    width: 0%;
+    height: 3px;
+    background-color: var(--gold);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
 /* Ichki nuqta */
 .cursor {
     width: 10px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './CubeCSS.css';
 
-const CubeCSS = () => {
+const CubeCSS = ({props}) => {
   // 6 ta tomonning hammasi shu yerda bo'lishi shart:
   const sides = [
     { text: "3D", class: "front" },
@@ -13,13 +13,15 @@ const CubeCSS = () => {
   ];
 
   return (
-    <div className="cube-container">
-      <div className="cube">
-        {sides.map((side, index) => (
-          <div key={index} className={`cube-face ${side.class}`}>
-            <span className="cube-text">{side.text}</span>
-          </div>
-        ))}
+    <div {...props}>
+      <div className="cube-container" >
+        <div className="cube">
+          {sides.map((side, index) => (
+            <div key={index} className={`cube-face ${side.class}`}>
+              <span className="cube-text">{side.text}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
