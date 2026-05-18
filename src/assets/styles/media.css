@@ -15,6 +15,13 @@
         grid-column-start: auto !important;
         grid-column-end: auto !important;
     }
+    .approach__general{
+        flex-direction: column;
+    }
+    .approach__box{
+        width: 100% !important;
+        margin-bottom: 50px ;
+    }
 }
 @media screen and (max-width: 768px) {
     .header__title{
@@ -61,5 +68,14 @@
     }
     .portfolio__title{
         font-size: 20px !important;
+    }
+    .approach__title{
+        font-size: 30px !important;
+        text-align: center;
+    }
+
+    .approach__text2, .approach__text{
+        font-size: 14px !important;
+        text-align: center;
     }
 }

@@ -1,0 +1,28 @@
+.approach{
+    background-color: var(--gray);
+    padding: 100px 0px;
+}
+.approach__general{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.approach__box{
+    width: 30%;
+}
+.approach__text{
+    font-family: var(--sans);
+    text-transform: uppercase;
+    font-size: 14px;
+    color: gray;
+    letter-spacing: 2px;
+}
+.approach__title{
+    font-family: var(--serif);
+    font-size: 60px;
+    margin: 20px 0px;
+}
+.approach__text2{
+    font-family: var(--sans);
+    color: gray;
+}

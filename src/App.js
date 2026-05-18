@@ -7,6 +7,7 @@ import Portfolio from "./sections/portfolio/Portfolio";
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // AOS stillari
+import Approach from "./sections/approach/Approach";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -22,6 +23,7 @@ function App() {
       <div className="main">
         <Header/>
         <Portfolio/>
+        <Approach/>
       </div>
     </>
   );

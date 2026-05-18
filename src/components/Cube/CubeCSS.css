@@ -1,0 +1,62 @@
+/* CubeCSS.css */
+
+.cube-container {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px; /* Shaffoflikda 3D chuqurlik yaxshi bilinishi uchun biroz oshirildi */
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  /* Animatsiya to'g'ri (o'ng) tomonga aylanadi */
+  animation: rotateCubeRightWithTilt 12s infinite linear; 
+}
+
+.cube-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  /* Rasmga mos nozik va mayin chiziqli border */
+  border: 1px solid rgba(58, 50, 29, 0.15); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Rasmga yaqin shrift stillari */
+  font-family: 'Georgia', serif; 
+  font-style: italic;
+  font-size: 1.4rem;
+  color: rgba(58, 50, 29, 0.7); 
+  
+  /* Ichki soya */
+  box-shadow: inset 0 0 20px rgba(58, 50, 29, 0.05);
+  user-select: none;
+  
+  /* CRITICAL: Rasmdegidek shaffof (transparent) effekt berish */
+  /* #f5f4f1 rangining 55% shaffoflikdagi varianti */
+  background-color: rgba(245, 244, 241, 0.946); 
+  
+  /* Orqadagi yozuvlar ham ko'rinishi uchun muhim xususiyat */
+  backface-visibility: visible; 
+}
+
+/* 6 ta tomonning joylashuvi (barchasi bir xil shaffof fonda) */
+.front  { transform: rotateY(0deg) translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* To'g'rilangan animatsiya: O'ngga aylanish va biroz tepadan qarash (X: 15deg) */
+@keyframes rotateCubeRightWithTilt {
+  0% {
+    transform: rotateX(15deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(15deg) rotateY(360deg);
+  }
+}
