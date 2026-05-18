@@ -26,6 +26,7 @@ export default function MagneticButton({ children, onClick, className = '' }) {
 
   return (
     <a
+      href='#/'
       ref={btnRef}
       className={`magnetic-btn ${className}`}
       onMouseMove={handleMouseMove}

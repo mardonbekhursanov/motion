@@ -47,7 +47,8 @@ function Portfolio() {
     ]
   return (
     <section className='portfolio'>
-        <marquee behavior="left">
+        {/* eslint-disable-next-line jsx-a11y/no-distracting-elements */}
+        <marquee>
             <ul className="portfolio__list">
             <li className="portfolio__item">
                 Social Media
