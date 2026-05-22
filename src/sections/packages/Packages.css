@@ -1,0 +1,226 @@
+/* ==========================================================================
+   PACKAGES SECTION (YAKUNIY MUKAMMAL KO'RINISH)
+   ========================================================================== */
+
+.packages {
+    padding: 120px 0;
+    background-color: var(--black); /* Sizning global qora foningiz */
+    color: var(--white);
+}
+
+.packages__subtitle {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: var(--sans);
+    font-weight: 500;
+}
+
+.packages__title {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 70px;
+    letter-spacing: 1px;
+}
+
+/* Kartalar qatori */
+.packages__general {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    background-color: var(--black);
+}
+
+/* Umumiy Karta Stili */
+.packages__box {
+    background-color: #070707; /* Ichki to'q qora foni */
+    border: 1px solid #141414;
+    padding: 55px 40px 45px 40px;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-right: -1px; /* Kartalar rasmdegidek birlashib turishi uchun */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ENG MASHHUR (O'rtadagi tillarang maxsus karta) */
+.packages__general .packages__box:nth-child(2) {
+    border: 1px solid var(--gold);
+    position: relative;
+    z-index: 1;
+    outline: 1px solid var(--gold);
+    transform: scale(1.03); /* Rasmga mos ravishda biroz kattaroq */
+    box-shadow: 0 0 40px rgba(201, 168, 76, 0.12); /* Atrofiga mayin tillarang nur */
+}
+
+/* Karta ustidagi kichik matn (STARTER, PREMIUM) */
+.box__subtitle {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    color: #666666;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+}
+
+/* Eng mashhur sarlavhasi matni */
+.packages__general .packages__box:nth-child(2) .box__subtitle {
+    color: var(--gold);
+}
+
+/* Tarif nomi (Basic, Professional, Cinematic) */
+.box__title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--white);
+    margin: 0 0 40px 0;
+}
+
+/* --------------------------------------------------------------------------
+   NARX SPRETSFIKASI (CSS orqali xatolarsiz generatsiya qilinadi)
+   -------------------------------------------------------------------------- */
+.box__price {
+    font-family: var(--sans);
+    font-size: 18px;
+    color: var(--white);
+    margin: 0 0 35px 0;
+    display: flex;
+    align-items: flex-start;
+    font-weight: 300;
+}
+
+/* Dollar belgisi avtomatik qo'shiladi */
+.box__price::before {
+    content: "$";
+    font-size: 18px;
+    color: var(--white);
+    margin-right: 5px;
+    position: relative;
+    top: 8px; /* Belgini raqam o'rtasiga surish */
+}
+
+/* Narx raqami */
+.box__price span {
+    font-family: var(--serif);
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 0.8;
+    color: var(--white);
+}
+
+/* / loyiha yozuvi avtomatik qo'shiladi */
+.box__price::after {
+    content: "/ loyiha";
+    font-family: var(--sans);
+    font-size: 10px;
+    color: #666666;
+    margin-left: 6px;
+    align-self: flex-end;
+    position: relative;
+    bottom: 2px;
+}
+
+/* Ichki ingichka chiziq */
+.packages__box hr {
+    border: none;
+    border-top: 1px solid #141414;
+    margin: 0 0 40px 0;
+    width: 100%;
+}
+
+.packages__general .packages__box:nth-child(2) hr {
+    border-top: 1px solid #222222;
+}
+
+/* Xizmatlar ro'yxati */
+.box__list {
+    margin: 0 0 50px 0;
+    flex-grow: 1; /* Tugmalarni pastga tekislash kafolati */
+}
+
+.box__item {
+    font-family: var(--sans);
+    color: #929292;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.3px;
+}
+
+/* Ro'yxat boshidagi chiziqcha (—) */
+.box__item::before {
+    content: "—";
+    color: #3a3a3a;
+    margin-right: 15px;
+    font-weight: 300;
+}
+
+/* --------------------------------------------------------------------------
+   TUGMALAR
+   -------------------------------------------------------------------------- */
+.box__link {
+    display: block;
+    text-align: center;
+    padding: 16px 0;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #1c1c1c;
+    color: var(--white);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Oddiy kartadagi tugmaga sichqoncha borganda */
+.box__link:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+}
+
+/* O'rtadagi kartaning oltin rangli tugmasi */
+.packages__general .packages__box:nth-child(2) .box__link {
+    background-color: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+    font-weight: 700;
+}
+
+.packages__general .packages__box:nth-child(2) .box__link:hover {
+    background-color: var(--gold-light);
+    border-color: var(--gold-light);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE (MOBIL EKRANLAR UCHUN)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .packages__general {
+        gap: 30px;
+        padding: 0 15px;
+    }
+    .packages__box {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .packages__general .packages__box:nth-child(2) {
+        transform: scale(1); /* Mobil ekranda kattalashish shartmas */
+        outline: none;
+    }
+}

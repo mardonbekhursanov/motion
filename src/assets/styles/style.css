@@ -89,7 +89,8 @@ html{
     position: fixed;
     width: 100%;
     z-index: 2;
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
+    background-color: white;
     top: 0;
 }
 .nav__logo{
@@ -135,4 +136,71 @@ html{
 /* NAVIGATION END */
 .main{
     margin-top: 90px;
+}
+
+/* ==========================================================================
+   FOOTER SECTION (SAYT YAKUNI)
+   ========================================================================== */
+
+.footer {
+    background-color: var(--black); /* To'liq to'q qora fon */
+    padding: 40px 0;
+    border-top: 1px solid #141414; /* Yuqori qismidan ajratuvchi juda xira chiziq */
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: #555555; /* Rasmda matnlar juda xira kulrangda berilgan */
+    letter-spacing: 0.3px;
+}
+
+/* Chap tomondagi mualliflik huquqi matni */
+.footer__copyright {
+    font-weight: 400;
+}
+
+/* O'rtadagi navigatsiya bloki */
+.footer__list {
+    display: flex;
+    gap: 35px; /* Havolalar orasidagi masofa */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer__link {
+    color: #555555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Havolalarga sichqoncha borgandagi effekt */
+.footer__link:hover {
+    color: var(--white); /* Fokus bo'lganda oq rangga kiradi */
+}
+
+/* O'ng tomondagi manzil */
+.footer__location {
+    font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE (MOBIL EKRANLAR UCHUN MOSLASHUVCHANLIK)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .footer__container {
+        flex-direction: column; /* Mobil ekranda hammasi markazga ustma-ust tushadi */
+        gap: 20px;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .footer__list {
+        gap: 20px;
+    }
 }

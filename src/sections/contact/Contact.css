@@ -1,0 +1,178 @@
+/* ==========================================================================
+   CONTACT SECTION (MINIMALIST DESIGN)
+   ========================================================================== */
+
+.contact {
+    padding: 120px 0;
+    background-color: #fcfbfa; /* Saytning umumiy och foni */
+    color: var(--black);
+}
+
+.contact__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px; /* Ikki blok orasidagi masofa */
+}
+
+/* --------------------------------------------------------------------------
+   CHAP TOMON: INFOMATSIYA BLOKI
+   -------------------------------------------------------------------------- */
+.contact__info {
+    flex: 1;
+    max-width: 450px;
+}
+
+.contact__title {
+    font-family: var(--serif);
+    font-size: 56px; /* Rasmda juda katta va elegant sarlavha */
+    line-height: 1.1;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact__row {
+    display: flex;
+    align-items: baseline;
+    font-size: 14px;
+}
+
+/* Chap tomondagi kichik xira yozuvlar (EMAIL, TELEFON...) */
+.contact__label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    color: #999999; /* var(--muted) */
+    width: 120px; /* Barcha yozuvlar bir xil tekislikda turishi uchun */
+    letter-spacing: 1.5px;
+}
+
+/* O'ng tomondagi asosiy qiyirlar */
+.contact__value {
+    font-family: var(--sans);
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+a.contact__value:hover {
+    color: var(--gold); /* Linklarga hover effekti */
+}
+
+/* --------------------------------------------------------------------------
+   O'NG TOMON: FORMA BLOKI
+   -------------------------------------------------------------------------- */
+.contact__form-wrapper {
+    flex: 1;
+    max-width: 550px;
+    width: 100%;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Inputlar orasidagi vertikal masofa */
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Input ustidagi kichik sarlavha */
+.form__label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    color: #999999;
+    letter-spacing: 1.5px;
+}
+
+/* Minimalist Inputlar */
+.form__input {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--black);
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* Faqat tagidagi nozik chiziq */
+    background-color: transparent;
+    padding: 10px 0 15px 0;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Input ichidagi xira yozuv (Placeholder) */
+.form__input::placeholder {
+    color: #b5b5b5;
+    font-weight: 300;
+}
+
+/* Sichqoncha ichiga kirganda (Focus holati) */
+.form__input:focus {
+    border-bottom: 1px solid var(--black); /* Tagidagi chiziq qorayadi */
+}
+
+/* Xabar yoziladigan qism (Textarea) */
+.form__textarea {
+    resize: none;
+    min-height: 45px;
+}
+
+/* --------------------------------------------------------------------------
+   YUBORISH TUGMASI
+   -------------------------------------------------------------------------- */
+.form__btn {
+    align-self: flex-start; /* Tugmani chapga taqash */
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 18px 35px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form__btn:hover {
+    background-color: #151515;
+}
+
+.form__btn:active {
+    transform: scale(0.98); /* Bosilganda kichrayish effekti */
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE (MOBIL MOSLASHUVCHANLIK)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .contact__container {
+        flex-direction: column; /* Ekranda ustma-ust tushadi */
+        gap: 60px;
+    }
+    
+    .contact__info, .contact__form-wrapper {
+        max-width: 100%;
+    }
+    
+    .contact__title {
+        font-size: 42px;
+        margin-bottom: 40px;
+    }
+}

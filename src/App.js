@@ -9,6 +9,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // AOS stillari
 import Approach from "./sections/approach/Approach";
 import Services from "./sections/services/Services";
+import Packages from "./sections/packages/Packages";
+import Articles from "./sections/articles/Articles";
+import Faq from "./sections/faq/FAQ";
+import Contact from "./sections/contact/Contact";
+import Footer from "./layouts/Footer";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -40,6 +45,11 @@ function App() {
         <Portfolio/>
         <Approach/>
         <Services/>
+        <Packages/>
+        <Articles/>
+        <Faq/>
+        <Contact/>
+        <Footer/>
       </div>
     </>
   );

@@ -1,0 +1,150 @@
+/* ==========================================================================
+   ARTICLES SECTION (BLOG)
+   ========================================================================== */
+
+.articles {
+    padding: 100px 0;
+    background-color: #fcfbfa; /* Saytning umumiy och foni */
+    color: var(--black);
+}
+
+/* "So'nggi maqolalar" sarlavhasi */
+.articles__title {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+}
+
+/* Rasmda "maqolalar" so'zi orqasi xira to'rtburchak kulrang fonda */
+.articles__title span {
+    background-color: rgba(0, 0, 0, 0.08);
+    padding: 0 15px;
+    display: inline-block;
+    line-height: 1.1;
+}
+
+/* Grid tuzilishi - chapda katta karta, o'ngda ikkita kichikroq */
+.articles__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* 1-karta ikki barobar keng */
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* --------------------------------------------------------------------------
+   KARTA (CARD) ARXITEKTURASI
+   -------------------------------------------------------------------------- */
+
+.articles__card {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Kartaning rasmli yuqori qismi */
+.card__img-box {
+    /* Fondo rasm (Inline style yordamida ulanadi, bu erda faqat umumiy stillar) */
+    background-color: #e3dec3; /* Rasmlar yuklanguncha fonda ko'rinib turadigan rang */
+    background-size: cover; /* Rasmni blokga to'liq sig'diradi */
+    background-position: center; /* Rasmni markazlashtiradi */
+    background-repeat: no-repeat; /* Rasmni takrorlamaydi */
+    
+    height: 280px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Eski .card__bg-text o'chirildi */
+
+/* Matnlar joylashgan qismi */
+.card__content {
+    padding: 25px; /* Rasmda chekkalarda padding yo'qdek, pastga tekislangan */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Kategoriya (Masalan: MOTION DESIGN) */
+.card__category {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gold); /* Tillarang urg'u */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* Maqola sarlavhasi */
+.card__card-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--black);
+    margin: 0 0 15px 0;
+    /* Matn uzun bo'lsa chiroyli chiqishi uchun */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Katta kartaning sarlavha o'lchami biroz ustunroq */
+.card--large .card__card-title {
+    font-size: 24px;
+}
+
+/* Sana va o'qish vaqti */
+.card__meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Elementlarni doim blok tagiga taqaydi */
+}
+
+.card__dot {
+    margin: 0 8px;
+    font-size: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE LAYOUT (MOBIL QURILMALAR UCHUN)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .articles__grid {
+        grid-template-columns: 1fr 1fr; /* Planshetlarda 2 talik qator */
+    }
+    .card--large {
+        grid-column: span 2; /* Katta karta tepada to'liq eniga yoyiladi */
+    }
+}
+
+@media (max-width: 768px) {
+    .articles__title {
+        font-size: 36px;
+    }
+    
+    .articles__grid {
+        grid-template-columns: 1fr; /* Mobil telefonda hammasi 1 qatorga tushadi */
+    }
+    
+    .card--large {
+        grid-column: span 1;
+    }
+    
+    .card__img-box {
+        height: 220px;
+    }
+}

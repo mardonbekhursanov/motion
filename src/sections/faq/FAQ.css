@@ -1,0 +1,173 @@
+/* ==========================================================================
+   FAQ SECTION (ACCORDION)
+   ========================================================================== */
+
+.faq {
+    padding: 120px 0;
+    background-color: #fcfbfa; /* Saytingizning umumiy och foni */
+    color: var(--black);
+}
+
+.faq__container {
+    max-width: 850px; /* Rasmda tekst markazlashgan va biroz yig'ilgan */
+    margin: 0 auto;
+}
+
+.faq__subtitle {
+    color: var(--muted); /* Savol & javob yozuvi uchun */
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 12px;
+    font-family: var(--sans);
+    font-weight: 500;
+}
+
+.faq__title {
+    font-family: var(--serif);
+    font-size: 46px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--black);
+    margin-top: 0;
+    margin-bottom: 70px;
+    letter-spacing: -0.5px;
+}
+
+/* Akkordeon ro'yxati */
+.faq__list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Har bir chiziq/element */
+.faq__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Nozik ajratuvchi chiziq */
+    padding: 10px 0;
+}
+
+/* Savol bloki (Bosiladigan qism) */
+.faq__question-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    cursor: pointer;
+}
+
+/* Savol matni */
+.faq__question {
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--black);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* O'ng tomondagi dumaloq tugma */
+.faq__toggle-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tugma ichidagi chiziqcha generatori (Xoch effekti uchun) */
+.faq__icon {
+    position: relative;
+    width: 12px;
+    height: 1px;
+    background-color: var(--black);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.faq__icon::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    left: 0;
+    top: 0;
+    transform: rotate(90px); /* Yopilganda plyus ko'rinishida bo'lishi uchun */
+    display: none; /* Rasmda plyus emas, shunchaki halqa yoki xoch qo'llangan */
+}
+
+/* --------------------------------------------------------------------------
+   OCHILGAN (ACTIVE) HOLAT STULLARI
+   -------------------------------------------------------------------------- */
+
+/* Savol ochiqligida dumaloq tugma o'zgarishi */
+.faq__item--open .faq__toggle-btn {
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+/* Ochilganda ichidagi chiziqcha oq rangga o'tib, qiyshayadi (X ko'rinishi) */
+.faq__item--open .faq__icon {
+    background-color: var(--white);
+    transform: rotate(45deg);
+}
+
+/* Krestning ikkinchi chizig'ini yasash */
+.faq__item--open .faq__icon::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    left: 0;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Javob matni qutisi */
+.faq__answer-box {
+    max-height: 0; /* Yopilganda ko'rinmaydi */
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+}
+
+/* Javob matnining o'zi */
+.faq__answer {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: #777777; /* Rasmga mos xira kulrang matn */
+    margin: 0;
+    max-width: 90%; /* O'ng tomondagi tugmaga tegib ketmasligi uchun */
+    padding-bottom: 25px;
+}
+
+/* Element ochilganda javob blokining balandligi kengayadi */
+.faq__item--open .faq__answer-box {
+    max-height: 300px; /* Silliq ochilish effekti uchun yetarli chegara balandlik */
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE (MOBIL CHIDAMLILIK)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .faq__title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .faq__question {
+        font-size: 16px;
+    }
+    
+    .faq__toggle-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
