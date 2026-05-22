@@ -25,7 +25,7 @@ function Contact() {
   };
 
   return (
-    <section className="contact">
+    <section className="contact" id='contact'>
       <div className="container contact__container">
         
         {/* CHAP TOMON: Katta sarlavha va aloqa ma'lumotlari */}

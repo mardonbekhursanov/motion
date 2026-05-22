@@ -45,7 +45,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section className="services-section">
+    <section className="services-section" id='services'>
       <Container>
         <div className="services-header">
         <h2 className="services-title">Nima qila olaman</h2>

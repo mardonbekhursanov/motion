@@ -1,0 +1,102 @@
+/* ==========================================================================
+   404 NOT FOUND PAGE (MINIMALIST & ELEGANT)
+   ========================================================================== */
+
+.error-page {
+    background-color: var(--black); /* Global to'q qora foningiz */
+    color: var(--white);
+    min-height: 100vh; /* Butun ekran balandligini egallaydi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.error-page__container {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Katta 404 raqami stili */
+.error-page__code {
+    font-family: var(--serif); /* Elegant Serif shrifti */
+    font-size: clamp(120px, 15vw, 180px); /* Ekran o'lchamiga qarab dinamik kattalashadi */
+    font-weight: 300;
+    line-height: 1;
+    color: var(--white);
+    margin: 0 0 10px 0;
+    letter-spacing: -2px;
+    /* Mayin tillarang soya effekti */
+    text-shadow: 0 10px 30px rgba(201, 168, 76, 0.08); 
+}
+
+/* Sahifa topilmadi sarlavhasi */
+.error-page__status {
+    font-family: var(--sans);
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold); /* Tillarang urg'u */
+    margin: 0 0 20px 0;
+}
+
+/* Tushuntirish matni */
+.error-page__message {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: #888888; /* Kuchli xiralashtirilgan matn */
+    margin: 0 0 40px 0;
+    max-width: 450px;
+}
+
+/* --------------------------------------------------------------------------
+   ORTGA QAYTISH TUGMASI
+   -------------------------------------------------------------------------- */
+.error-page__btn {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 16px 32px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Tugmaga hover bo'lganda to'liq oq rangga o'tishi */
+.error-page__btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE (MOBIL EKRANLAR)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .error-page__status {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .error-page__message {
+        font-size: 13px;
+    }
+
+    .error-page__btn {
+        padding: 14px 28px;
+        font-size: 11px;
+    }
+}

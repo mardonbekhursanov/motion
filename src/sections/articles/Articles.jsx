@@ -37,7 +37,7 @@ function Articles() {
   ];
 
   return (
-    <section className="articles">
+    <section className="articles" id='blog'>
       <div className="container">
         {/* Sarlavha qismi */}
         <h2 className="articles__title">

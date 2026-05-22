@@ -14,6 +14,8 @@ import Articles from "./sections/articles/Articles";
 import Faq from "./sections/faq/FAQ";
 import Contact from "./sections/contact/Contact";
 import Footer from "./layouts/Footer";
+import { Routes, Route } from "react-router-dom";
+import NotFound from "./layouts/NotFound";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -41,15 +43,20 @@ function App() {
       <Cursor />
       <Nav />
       <div className="main">
-        <Header/>
-        <Portfolio/>
-        <Approach/>
-        <Services/>
-        <Packages/>
-        <Articles/>
-        <Faq/>
-        <Contact/>
-        <Footer/>
+        <Routes>
+          <Route path="/" element={<>
+            <Header/>
+            <Portfolio/>
+            <Approach/>
+            <Services/>
+            <Packages/>
+            <Articles/>
+            <Faq/>
+            <Contact/>
+            <Footer/>
+          </>} />
+          <Route path="/about" element={<NotFound/>} />
+        </Routes>
       </div>
     </>
   );

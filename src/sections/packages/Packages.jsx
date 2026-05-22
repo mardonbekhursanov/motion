@@ -50,7 +50,7 @@ function Packages() {
   ];
 
   return (
-    <section className="packages">
+    <section className="packages" id='prices'>
       <div className="container">
         <p className="packages__subtitle">Narxlar</p>
         <h2 className="packages__title">Paketlar</h2>

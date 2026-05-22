@@ -12,7 +12,7 @@ function Nav() {
                     <a href="#portfolio">Portfolio</a>
                 </li>
                 <li className="nav__item">
-                    <a href="#about">Haqimda</a>
+                    <a href="/about">Haqimda</a>
                 </li>
                 <li className="nav__item">
                     <a href="#services">Xizmatlar</a>

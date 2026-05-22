@@ -46,7 +46,7 @@ function Portfolio() {
         },
     ]
   return (
-    <section className='portfolio'>
+    <section className='portfolio' id='portfolio'>
         {/* eslint-disable-next-line jsx-a11y/no-distracting-elements */}
         <marquee>
             <ul className="portfolio__list">
